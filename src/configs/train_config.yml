@@ -1,5 +1,5 @@
-output_root: '../'
-pytorch_data_dir: '/datadrive/pytorch-data/'
+output_root: "../"
+pytorch_data_dir: "/home/tipriest/data/"
 experiment_name: "exp1"
 log_dir: "cocostuff27"
 azureml_logging: True
@@ -54,7 +54,6 @@ aug_alignment_weight: 0.0
 
 correspondence_weight: 1.0
 
-
 # IAROA vit small 1/31/22
 neg_inter_weight: 0.63
 pos_inter_weight: 0.25
@@ -79,7 +78,6 @@ pos_intra_shift: 0.18
 #pos_inter_shift: 0.02
 #pos_intra_shift: 0.08
 
-
 ## Cocostuff27 10/3 vit_base
 
 #neg_inter_weight: 0.1538476246415498
@@ -90,7 +88,6 @@ pos_intra_shift: 0.18
 #pos_inter_shift: 0.2
 #pos_intra_shift: 0.12
 
-
 ## Cocostuff27 10/3 vit_small
 #neg_inter_weight: .63
 #pos_inter_weight: .25
@@ -99,8 +96,6 @@ pos_intra_shift: 0.18
 #neg_inter_shift: .16
 #pos_inter_shift: .02
 #pos_intra_shift: .08
-
-
 
 ## Cocostuff27 10/3 moco
 #neg_inter_weight: .63
@@ -133,7 +128,6 @@ pos_intra_shift: 0.18
 #pos_inter_shift: 0.1754346515479633
 #pos_intra_shift: 0.45828472207
 
-
 # Cityscapes
 #neg_inter_weight: .72
 #pos_inter_weight: .18
@@ -142,7 +136,6 @@ pos_intra_shift: 0.18
 #neg_inter_shift: .25
 #pos_inter_shift: .20
 #pos_intra_shift: .25
-
 
 rec_weight: 0.0
 repulsion_weight: 0.0
@@ -166,7 +159,6 @@ scalar_log_freq: 10
 checkpoint_freq: 50
 val_freq: 100
 hist_freq: 100
-
 
 hydra:
   run:

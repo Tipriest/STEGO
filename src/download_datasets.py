@@ -17,7 +17,7 @@ def my_app(cfg: DictConfig) -> None:
 
     os.makedirs(pytorch_data_dir, exist_ok=True)
     for dataset_name in dataset_names:
-        if (not os.path.exists(join(pytorch_data_dir, dataset_name))) or \
+        if (not os.path.exists(join(pytorch_data_dir, dataset_name))) and \
                 (not os.path.exists(join(pytorch_data_dir, dataset_name + ".zip"))):
             print("\n Downloading {}".format(dataset_name))
             wget.download(url_base + dataset_name + ".zip", join(pytorch_data_dir, dataset_name + ".zip"))
