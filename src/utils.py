@@ -11,14 +11,14 @@ import torch.nn.functional as F
 import wget
 from PIL import Image
 from scipy.optimize import linear_sum_assignment
-from torch._six import string_classes
+import collections.abc
 from torch.utils.data import DataLoader
 from torch.utils.data._utils.collate import np_str_obj_array_pattern, default_collate_err_msg_format
 from torchmetrics import Metric
 from torchvision import models
 from torchvision import transforms as T
 from torch.utils.tensorboard.summary import hparams
-
+string_classes = (str, bytes)
 
 def prep_for_plot(img, rescale=True, resize=None):
     if resize is not None:
@@ -288,7 +288,8 @@ def flexible_collate(batch):
             storage = elem.storage()._new_shared(numel)
             out = elem.new(storage)
         try:
-            return torch.stack(batch, 0, out=out)
+            batch_shape = (len(batch), *elem.size())
+            return torch.stack(batch, 0, out=out.resize_(batch_shape))
         except RuntimeError:
             return batch
     elif elem_type.__module__ == 'numpy' and elem_type.__name__ != 'str_' \

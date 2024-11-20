@@ -4,7 +4,7 @@ image_dir: "/datadrive/pytorch-data/cocostuff/images/val2017"
 experiment_name: "cocostuff_val"
 res: 320
 batch_size: 8
-num_workers: 24
+num_workers: 20
 use_ddp: False
 
 hydra:

@@ -3,7 +3,7 @@ pytorch_data_dir: "/home/tipriest/data/"
 experiment_name: "cityscapes"
 res: 320
 batch_size: 8
-num_workers: 24
+num_workers: 20
 run_picie: True
 run_crf: True
 run_prediction: True

@@ -7,7 +7,7 @@ plot_correspondence: True
 plot_movie: True
 
 # Loader params
-num_workers: 24
+num_workers: 20
 max_steps: 5000
 
 num_neighbors: 7
